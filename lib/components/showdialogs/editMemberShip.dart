@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:peps_admin/Components/TextFields/CounterNumberField.dart'; // Assurez-vous que le widget est bien importé
+import '../TextFields/CounterNumberField.dart';
 
 class EditMemberShipDialog {
   // ignore: non_constant_identifier_names

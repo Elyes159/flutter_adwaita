@@ -1,18 +1,24 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:peps_admin/Components/TitleBarsButton/ButtonBar.dart';
-import 'package:peps_admin/Components/showdialogs/createPack.dart';
-import 'package:peps_admin/Screens/Users/UserStat.dart';
-// ignore: unused_import
-import 'package:peps_admin/Screens/packs/packScreen.dart';
-import 'package:peps_admin/Screens/sessions/shedule.dart';
+import '../TitleBarsButton/ButtonBar.dart';
+import '../showdialogs/createPack.dart';
 
 class SheduleCustomTitleBar extends StatelessWidget {
-  final String
-      currentPage; // Ajout d'une propriété pour identifier la page active
+  final String currentPage;
+  final Widget scheduleScreen;
+  final Widget packsScreen;
+  final Widget userStatScreen;
+  final VoidCallback onAddSessionTap;
 
-  const SheduleCustomTitleBar({super.key, required this.currentPage});
+  const SheduleCustomTitleBar({
+    super.key,
+    required this.currentPage,
+    required this.scheduleScreen,
+    required this.packsScreen,
+    required this.userStatScreen,
+    required this.onAddSessionTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +30,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: InkWell(
-                onTap: () {
-                  if (currentPage == "Packs") {
-                    CreateGroupDialog.show(context, () {}, controller);
-                  }
-                },
+                onTap: onAddSessionTap,
                 child: SvgPicture.asset("assets/Icons/addSession.svg"),
               ),
             ),
@@ -47,7 +49,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ScheduleScreen(),
+                                  builder: (context) => scheduleScreen,
                                 ),
                               );
                             },
@@ -61,7 +63,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Packs(),
+                                  builder: (context) => packsScreen,
                                 ),
                               );
                             },
@@ -75,7 +77,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => UserStat(),
+                                  builder: (context) => userStatScreen,
                                 ),
                               );
                             },
@@ -104,9 +106,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
                       height: 24,
                     ),
                   ),
-                  SizedBox(
-                    width: 21,
-                  ),
+                  SizedBox(width: 21),
                   InkWell(
                     onTap: () {
                       appWindow.close();
@@ -117,9 +117,7 @@ class SheduleCustomTitleBar extends StatelessWidget {
                       height: 24,
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
+                  SizedBox(width: 10),
                 ],
               ),
             ),
