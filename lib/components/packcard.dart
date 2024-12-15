@@ -18,7 +18,7 @@ class PackOrMemberShipCard extends StatelessWidget {
     this.onDelete,
     this.onViewDetails,
     required this.isDetails,
-     this.isPack,
+    this.isPack,
   }) : super(key: key);
 
   @override
@@ -69,15 +69,13 @@ class PackOrMemberShipCard extends StatelessWidget {
                     onTap: onDelete,
                     child: SvgPicture.asset("assets/Icons/poubelle.svg"),
                   ),
-                 
                   if (!isDetails) ...[
-                     const SizedBox(width: 21),
-                       InkWell(
-                    onTap: onViewDetails,
-                    child: SvgPicture.asset("assets/Icons/arrow_next.svg")),
-                  const SizedBox(width: 18),
+                    const SizedBox(width: 21),
+                    InkWell(
+                        onTap: onViewDetails,
+                        child: SvgPicture.asset("assets/Icons/arrow_next.svg")),
+                    const SizedBox(width: 18),
                   ]
-                 
                 ],
               ),
             ],

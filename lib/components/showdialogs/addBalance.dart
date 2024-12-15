@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BalanceDialog {
-  static void showAddBalanceDialog(BuildContext context,TextEditingController controller,String? name,VoidCallback onConfirm) {
+  static void showAddBalanceDialog(BuildContext context,
+      TextEditingController controller, String? name, VoidCallback onConfirm) {
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -10,10 +11,12 @@ class BalanceDialog {
         return Dialog(
           backgroundColor: Colors.transparent,
           insetPadding: const EdgeInsets.all(20),
-          child: SingleChildScrollView( // Permet le défilement si nécessaire
+          child: SingleChildScrollView(
+            // Permet le défilement si nécessaire
             child: Container(
               width: 433,
-              constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.9),
+              constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height * 0.9),
               padding: const EdgeInsets.all(15),
               clipBehavior: Clip.antiAlias,
               decoration: ShapeDecoration(
@@ -83,7 +86,8 @@ class BalanceDialog {
                         const SizedBox(height: 10),
                         Container(
                           width: double.infinity,
-                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
                           clipBehavior: Clip.antiAlias,
                           decoration: ShapeDecoration(
                             color: const Color(0xFF45475A),
@@ -92,7 +96,8 @@ class BalanceDialog {
                             ),
                           ),
                           child: Column(
-                            mainAxisSize: MainAxisSize.min, // Réduit la taille pour s'adapter au contenu
+                            mainAxisSize: MainAxisSize
+                                .min, // Réduit la taille pour s'adapter au contenu
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
@@ -124,13 +129,12 @@ class BalanceDialog {
                                   border: InputBorder.none,
                                   isDense: true, // Réduit l'espace vertical
                                 ),
-                                keyboardType: TextInputType.number, // Saisie numérique
+                                keyboardType:
+                                    TextInputType.number, // Saisie numérique
                               ),
                             ],
                           ),
                         )
-
-
                       ],
                     ),
                   ),
@@ -144,7 +148,8 @@ class BalanceDialog {
                         child: TextButton(
                           onPressed: () => Navigator.of(context).pop(),
                           style: TextButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: 54, vertical: 10),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 54, vertical: 10),
                             backgroundColor: const Color(0xFF45475A),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(13),
@@ -170,7 +175,8 @@ class BalanceDialog {
                             onConfirm;
                           },
                           style: TextButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: 54, vertical: 10),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 54, vertical: 10),
                             backgroundColor: const Color(0xFF89B4FA),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(13),

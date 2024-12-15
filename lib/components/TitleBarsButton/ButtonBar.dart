@@ -20,12 +20,19 @@ class ButtonBars extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed, // Action à exécuter lorsqu'on clique
-      borderRadius: BorderRadius.circular(6), // Effet d'ondulation sur le bouton
+      borderRadius:
+          BorderRadius.circular(6), // Effet d'ondulation sur le bouton
       child: Container(
-        width: textButton == "Users" ? 120 : textButton == "Packs & Memberships" ? 231 :147 ,
+        width: textButton == "Users"
+            ? 120
+            : textButton == "Packs & Memberships"
+                ? 231
+                : 147,
         height: 34,
         decoration: BoxDecoration(
-          color: isActive ? const Color(0xFF313244) : Colors.transparent, // Change la couleur si `isActive` est vrai
+          color: isActive
+              ? const Color(0xFF313244)
+              : Colors.transparent, // Change la couleur si `isActive` est vrai
           borderRadius: BorderRadius.circular(6),
         ),
         child: Padding(

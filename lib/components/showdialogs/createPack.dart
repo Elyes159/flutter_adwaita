@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CreateGroupDialog {
-  static void show(BuildContext context, VoidCallback onConfirm , TextEditingController controller) {
+  static void show(BuildContext context, VoidCallback onConfirm,
+      TextEditingController controller) {
     showDialog(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
         return Dialog(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20), // Applique la bordure arrondie ici
+            borderRadius:
+                BorderRadius.circular(20), // Applique la bordure arrondie ici
           ),
           child: SingleChildScrollView(
             child: Container(
@@ -17,7 +19,8 @@ class CreateGroupDialog {
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: const Color(0xFF313244),
-                borderRadius: BorderRadius.circular(20), // Vérification supplémentaire
+                borderRadius:
+                    BorderRadius.circular(20), // Vérification supplémentaire
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -37,7 +40,8 @@ class CreateGroupDialog {
                           height: 65,
                           clipBehavior: Clip.antiAlias,
                           decoration: const BoxDecoration(),
-                          child: SvgPicture.asset("assets/Icons/createPack.svg"),
+                          child:
+                              SvgPicture.asset("assets/Icons/createPack.svg"),
                         ),
                         const SizedBox(height: 10),
                         const Text(
@@ -60,7 +64,8 @@ class CreateGroupDialog {
                             fillColor: const Color(0xFF45475A),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide.none, // Pas de bordure visible
+                              borderSide:
+                                  BorderSide.none, // Pas de bordure visible
                             ),
                             labelText: 'Name',
                             labelStyle: const TextStyle(

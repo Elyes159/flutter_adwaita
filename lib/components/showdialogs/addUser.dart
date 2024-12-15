@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class AddNewUserDialog {
-  static void showAddUserDialog(BuildContext context,TextEditingController nameController,TextEditingController emailController,TextEditingController accountTypeController,VoidCallback onConfirm) {
-    
+  static void showAddUserDialog(
+      BuildContext context,
+      TextEditingController nameController,
+      TextEditingController emailController,
+      TextEditingController accountTypeController,
+      VoidCallback onConfirm) {
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -95,7 +99,7 @@ class AddNewUserDialog {
                     const SizedBox(width: 15),
                     Container(
                       width: 194,
-                      height:44,
+                      height: 44,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF89B4FA),

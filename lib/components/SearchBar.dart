@@ -4,16 +4,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 class SearchBarUser extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
-  final FocusNode focusNode; 
-  final VoidCallback onPressed;// Ajout du FocusNode
+  final FocusNode focusNode;
+  final VoidCallback onPressed; // Ajout du FocusNode
 
-  const SearchBarUser({
-    super.key,
-    required this.controller,
-    required this.hintText,
-    required this.focusNode,
-    required this.onPressed // Ajout du FocusNode dans le constructeur
-  });
+  const SearchBarUser(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      required this.focusNode,
+      required this.onPressed // Ajout du FocusNode dans le constructeur
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,8 @@ class SearchBarUser extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center, // Ensures vertical centering of Row contents
+        crossAxisAlignment: CrossAxisAlignment
+            .center, // Ensures vertical centering of Row contents
         children: [
           // Logo on the left
           Container(
@@ -50,7 +51,8 @@ class SearchBarUser extends StatelessWidget {
                   height: 18,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(),
-                  child: SvgPicture.asset("assets/Icons/search.svg"), // You can replace this with your custom logo
+                  child: SvgPicture.asset(
+                      "assets/Icons/search.svg"), // You can replace this with your custom logo
                 ),
                 const SizedBox(width: 15),
               ],

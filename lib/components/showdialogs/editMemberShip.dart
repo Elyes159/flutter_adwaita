@@ -13,7 +13,6 @@ class EditMemberShipDialog {
     int resetSessionCount,
     int validity,
   ) {
-
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -77,8 +76,7 @@ class EditMemberShipDialog {
                       // Utilisation du widget SessionCounterWidget et gestion du nombre de sessions
                       SessionCounterWidget(
                         title: 'Number of sessions',
-                        onValueChanged: (nBSessionCount) {
-                        },
+                        onValueChanged: (nBSessionCount) {},
                         isNumberOfDays: false,
                       ),
                       const SizedBox(height: 10),
@@ -90,7 +88,7 @@ class EditMemberShipDialog {
                         isNumberOfDays: true,
                       ),
                       const SizedBox(height: 10),
-                     SessionCounterWidget(
+                      SessionCounterWidget(
                         title: 'Validity',
                         onValueChanged: (validity) {
                           // Si nécessaire, gérer le reset ici

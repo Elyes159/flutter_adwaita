@@ -112,7 +112,8 @@ class BanUserDialog {
                         onTap: onCancel,
                         child: Container(
                           height: 44,
-                          padding: const EdgeInsets.symmetric(horizontal: 54, vertical: 3),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 54, vertical: 3),
                           clipBehavior: Clip.antiAlias,
                           decoration: ShapeDecoration(
                             color: const Color(0xFF45475A),
@@ -142,7 +143,8 @@ class BanUserDialog {
                         onTap: onBan,
                         child: Container(
                           height: 44,
-                          padding: const EdgeInsets.symmetric(horizontal: 54, vertical: 3),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 54, vertical: 3),
                           clipBehavior: Clip.antiAlias,
                           decoration: ShapeDecoration(
                             color: const Color(0x3FF38BA8),

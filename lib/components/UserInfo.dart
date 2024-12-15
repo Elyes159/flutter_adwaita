@@ -31,7 +31,11 @@ class CreateUserButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset("assets/Icons/add.svg",width: 14,height: 14,),
+            SvgPicture.asset(
+              "assets/Icons/add.svg",
+              width: 14,
+              height: 14,
+            ),
             const SizedBox(width: 10),
             const Text(
               'Create new user',
@@ -65,7 +69,13 @@ class RoleBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: userRole == "Trainee" ?const Color(0xFFB4BEFE) : userRole=="Trainer" ? Color(0xFF89B4FA) : userRole == "Staff" ? Color(0xFFA6E3A1) : Colors.grey,
+        color: userRole == "Trainee"
+            ? const Color(0xFFB4BEFE)
+            : userRole == "Trainer"
+                ? Color(0xFF89B4FA)
+                : userRole == "Staff"
+                    ? Color(0xFFA6E3A1)
+                    : Colors.grey,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100),
         ),
@@ -129,7 +139,15 @@ class StatCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
             clipBehavior: Clip.antiAlias,
             decoration: ShapeDecoration(
-              color: title == "Trainees" ? Color(0xFFB4BEFE) : title =="Trainers" ? Color(0xFF74C7EC) : title == "Staff" ? Color(0xFFA6E3A1) : title == "Admin" ? Color(0xFFF38BA8) : Color(0xffffffff),
+              color: title == "Trainees"
+                  ? Color(0xFFB4BEFE)
+                  : title == "Trainers"
+                      ? Color(0xFF74C7EC)
+                      : title == "Staff"
+                          ? Color(0xFFA6E3A1)
+                          : title == "Admin"
+                              ? Color(0xFFF38BA8)
+                              : Color(0xffffffff),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),

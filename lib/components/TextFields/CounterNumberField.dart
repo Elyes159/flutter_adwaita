@@ -7,11 +7,10 @@ class SessionCounterWidget extends StatefulWidget {
   final bool isNumberOfDays; // Callback pour envoyer la valeur
 
   // Constructor pour accepter le titre et la fonction callback
-  SessionCounterWidget({
-    required this.title,
-    required this.onValueChanged,
-    required this.isNumberOfDays
-  });
+  SessionCounterWidget(
+      {required this.title,
+      required this.onValueChanged,
+      required this.isNumberOfDays});
 
   @override
   _SessionCounterWidgetState createState() => _SessionCounterWidgetState();
@@ -48,26 +47,26 @@ class _SessionCounterWidgetState extends State<SessionCounterWidget> {
           ),
           Row(
             children: [
-              if(widget.isNumberOfDays)
-              Text(
-                "$numberOfSessions Days",
-                style: const TextStyle(
-                  color: Color(0xFFCDD6F4),
-                  fontSize: 14,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
+              if (widget.isNumberOfDays)
+                Text(
+                  "$numberOfSessions Days",
+                  style: const TextStyle(
+                    color: Color(0xFFCDD6F4),
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
+                )
+              else
+                Text(
+                  "$numberOfSessions",
+                  style: const TextStyle(
+                    color: Color(0xFFCDD6F4),
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              )
-              else 
-              Text(
-                "$numberOfSessions",
-                style: const TextStyle(
-                  color: Color(0xFFCDD6F4),
-                  fontSize: 14,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
               const SizedBox(width: 8),
               GestureDetector(
                 onTap: () {
@@ -76,7 +75,8 @@ class _SessionCounterWidgetState extends State<SessionCounterWidget> {
                       numberOfSessions--;
                     }
                   });
-                  widget.onValueChanged(numberOfSessions); // Envoyer la nouvelle valeur
+                  widget.onValueChanged(
+                      numberOfSessions); // Envoyer la nouvelle valeur
                 },
                 child: SvgPicture.asset(
                   "assets/Icons/mines.svg",
@@ -89,7 +89,8 @@ class _SessionCounterWidgetState extends State<SessionCounterWidget> {
                   setState(() {
                     numberOfSessions++;
                   });
-                  widget.onValueChanged(numberOfSessions); // Envoyer la nouvelle valeur
+                  widget.onValueChanged(
+                      numberOfSessions); // Envoyer la nouvelle valeur
                 },
                 child: SvgPicture.asset(
                   "assets/Icons/plus.svg",

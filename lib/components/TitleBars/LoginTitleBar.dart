@@ -35,7 +35,7 @@ class LoginCustomTitleBar extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -43,12 +43,12 @@ class LoginCustomTitleBar extends StatelessWidget {
                     onTap: () {
                       appWindow.close();
                     },
-                     child: SvgPicture.asset(
-                        'assets/Icons/close.svg',
-                        width: 24,
-                        height: 24,
-                      ),
-                   ),
+                    child: SvgPicture.asset(
+                      'assets/Icons/close.svg',
+                      width: 24,
+                      height: 24,
+                    ),
+                  ),
                 ],
               ),
             ),

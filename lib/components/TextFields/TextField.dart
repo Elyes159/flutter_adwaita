@@ -26,7 +26,9 @@ class CustomTextField extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: hasError ? const Color(0x3FF38BA8) : const Color(0xFF313244), // Changement de couleur si erreur
+        color: hasError
+            ? const Color(0x3FF38BA8)
+            : const Color(0xFF313244), // Changement de couleur si erreur
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -39,7 +41,8 @@ class CustomTextField extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: controller,
-              textAlignVertical: TextAlignVertical.center, // Centrer le texte verticalement
+              textAlignVertical:
+                  TextAlignVertical.center, // Centrer le texte verticalement
               decoration: InputDecoration(
                 hintText: labelText,
                 hintStyle: const TextStyle(
@@ -49,7 +52,9 @@ class CustomTextField extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(vertical: 14), // Ajuster la marge verticale pour centrer le texte
+                contentPadding: EdgeInsets.symmetric(
+                    vertical:
+                        14), // Ajuster la marge verticale pour centrer le texte
               ),
               style: const TextStyle(
                 color: Color(0xFFCDD6F4),

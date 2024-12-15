@@ -9,7 +9,8 @@ import 'package:peps_admin/Screens/packs/packScreen.dart';
 import 'package:peps_admin/Screens/sessions/shedule.dart';
 
 class SheduleCustomTitleBar extends StatelessWidget {
-  final String currentPage; // Ajout d'une propriété pour identifier la page active
+  final String
+      currentPage; // Ajout d'une propriété pour identifier la page active
 
   const SheduleCustomTitleBar({super.key, required this.currentPage});
 
@@ -24,8 +25,8 @@ class SheduleCustomTitleBar extends StatelessWidget {
               padding: const EdgeInsets.only(left: 8.0),
               child: InkWell(
                 onTap: () {
-                  if (currentPage == "Packs"){
-                    CreateGroupDialog.show(context,(){},controller);
+                  if (currentPage == "Packs") {
+                    CreateGroupDialog.show(context, () {}, controller);
                   }
                 },
                 child: SvgPicture.asset("assets/Icons/addSession.svg"),
@@ -46,13 +47,14 @@ class SheduleCustomTitleBar extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>  ScheduleScreen(),
+                                  builder: (context) => ScheduleScreen(),
                                 ),
                               );
                             },
                             textButton: 'Schedule',
                             imagePath: 'assets/Icons/shedule.svg',
-                            isActive: currentPage == 'Schedule', // Vérifie si la page est active
+                            isActive: currentPage ==
+                                'Schedule', // Vérifie si la page est active
                           ),
                           ButtonBars(
                             onPressed: () {
@@ -65,20 +67,22 @@ class SheduleCustomTitleBar extends StatelessWidget {
                             },
                             textButton: 'Packs & Memberships',
                             imagePath: 'assets/Icons/packs.svg',
-                            isActive: currentPage == 'Packs', // Vérifie si la page est active
+                            isActive: currentPage ==
+                                'Packs', // Vérifie si la page est active
                           ),
                           ButtonBars(
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>  UserStat(),
+                                  builder: (context) => UserStat(),
                                 ),
                               );
                             },
                             textButton: 'Users',
                             imagePath: 'assets/Icons/users.svg',
-                            isActive: currentPage == 'Users', // Vérifie si la page est active
+                            isActive: currentPage ==
+                                'Users', // Vérifie si la page est active
                           ),
                         ],
                       ),
@@ -88,31 +92,34 @@ class SheduleCustomTitleBar extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                   InkWell(
-                    onTap: () {
-                    },
-                     child: SvgPicture.asset(
-                        'assets/Icons/more.svg',
-                        width: 24,
-                        height: 24,
-                      ),
-                   ),
-                  SizedBox(width: 21,),
-                 InkWell(
+                  InkWell(
+                    onTap: () {},
+                    child: SvgPicture.asset(
+                      'assets/Icons/more.svg',
+                      width: 24,
+                      height: 24,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 21,
+                  ),
+                  InkWell(
                     onTap: () {
                       appWindow.close();
                     },
-                     child: SvgPicture.asset(
-                        'assets/Icons/close.svg',
-                        width: 24,
-                        height: 24,
-                      ),
-                   ),
-                 SizedBox(width: 10,),
+                    child: SvgPicture.asset(
+                      'assets/Icons/close.svg',
+                      width: 24,
+                      height: 24,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
                 ],
               ),
             ),
