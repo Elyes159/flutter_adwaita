@@ -96,15 +96,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 height: 14,
               ),
             ),
-          if (widget.labelText == "Password") ...[
+         if (widget.labelText == "Password") ...[
             const SizedBox(width: 24),
             Container(
-              width: 11.20,
-              height: 14,
+              width: 20,
+              height: 20,
               child: SvgPicture.asset(
                 'assets/Icons/Frame.svg',
-                width: 11.20,
-                height: 14,
+                width: 20,
+                height: 20,
               ),
             ),
           ],
