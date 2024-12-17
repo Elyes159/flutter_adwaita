@@ -1,17 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
   final String labelText;
-  final bool hasError; // Propriété pour l'état d'erreur
+  final bool hasError;
 
   const CustomTextField({
     Key? key,
     required this.controller,
     required this.labelText,
-    required this.hasError, // Valeur par défaut à false
+    required this.hasError,
   }) : super(key: key);
+
+  @override
+  _CustomTextFieldState createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  late FocusNode _focusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+
+    // Ajoutez un écouteur pour détecter les changements de focus
+    _focusNode.addListener(() {
+      setState(() {}); // Rebuild the widget to update the icon visibility
+    });
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +50,7 @@ class CustomTextField extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: hasError
-            ? const Color(0x3FF38BA8)
-            : const Color(0xFF313244), // Changement de couleur si erreur
+        color: widget.hasError ? const Color(0x3FF38BA8) : const Color(0xFF313244),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -40,11 +62,11 @@ class CustomTextField extends StatelessWidget {
         children: [
           Expanded(
             child: TextField(
-              controller: controller,
-              textAlignVertical:
-                  TextAlignVertical.center, // Centrer le texte verticalement
+              controller: widget.controller,
+              focusNode: _focusNode, // Attachez le FocusNode ici
+              textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
-                hintText: labelText,
+                hintText: widget.labelText,
                 hintStyle: const TextStyle(
                   color: Color(0xFFCDD6F4),
                   fontSize: 14,
@@ -52,9 +74,7 @@ class CustomTextField extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(
-                    vertical:
-                        14), // Ajuster la marge verticale pour centrer le texte
+                contentPadding: EdgeInsets.symmetric(vertical: 14),
               ),
               style: const TextStyle(
                 color: Color(0xFFCDD6F4),
@@ -65,24 +85,26 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 10),
-          Container(
-            width: 11.20,
-            height: 14,
-            child: SvgPicture.asset(
-              'assets/Icons/Group.svg',
-              width: 11.20, // Spécifiez la largeur
-              height: 14, // Spécifiez la hauteur
+          // Affiche l'icône si le champ n'est pas focalisé
+          if (!_focusNode.hasFocus)
+            Container(
+              width: 11.20,
+              height: 14,
+              child: SvgPicture.asset(
+                'assets/Icons/Group.svg',
+                width: 11.20,
+                height: 14,
+              ),
             ),
-          ),
-          if (labelText == "Password") ...[
+          if (widget.labelText == "Password") ...[
             const SizedBox(width: 24),
             Container(
               width: 11.20,
               height: 14,
               child: SvgPicture.asset(
                 'assets/Icons/Frame.svg',
-                width: 11.20, // Spécifiez la largeur
-                height: 14, // Spécifiez la hauteur
+                width: 11.20,
+                height: 14,
               ),
             ),
           ],
