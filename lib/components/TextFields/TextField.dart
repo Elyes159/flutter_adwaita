@@ -25,7 +25,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     super.initState();
     _focusNode = FocusNode();
 
-    // Ajoutez un écouteur pour détecter les changements de focus
+    // Add a listener to detect focus changes
     _focusNode.addListener(() {
       setState(() {}); // Rebuild the widget to update the icon visibility
     });
@@ -63,7 +63,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
           Expanded(
             child: TextField(
               controller: widget.controller,
-              focusNode: _focusNode, // Attachez le FocusNode ici
+              focusNode: _focusNode, // Attach the FocusNode here
+              obscureText: widget.labelText == "Password", // Hide text with asterisks if it's password
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                 hintText: widget.labelText,
@@ -85,7 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
           ),
           const SizedBox(width: 10),
-          // Affiche l'icône si le champ n'est pas focalisé
+          // Display the icon only when the field is not focused
           if (!_focusNode.hasFocus)
             Container(
               width: 11.20,
@@ -96,7 +97,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 height: 14,
               ),
             ),
-         if (widget.labelText == "Password") ...[
+          if (widget.labelText == "Password") ...[
             const SizedBox(width: 24),
             Container(
               width: 20,
