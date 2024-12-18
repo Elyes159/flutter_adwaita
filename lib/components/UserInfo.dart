@@ -16,7 +16,7 @@ class CreateUserButton extends StatelessWidget {
       onTap: onPressed,
       borderRadius: BorderRadius.circular(50),
       child: Container(
-        width: 206,
+        width: 208,
         height: 44,
         padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
         clipBehavior: Clip.antiAlias,
