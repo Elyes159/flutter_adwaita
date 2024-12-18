@@ -71,20 +71,21 @@ class PackOrMemberShipCard extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: onEdit,
-                    child: SvgPicture.asset("assets/Icons/Group.svg"),
+                    child: SvgPicture.asset("assets/Icons/Group.svg",width: 11.2,height: 14,),
                   ),
                   const SizedBox(width: 21),
                   InkWell(
                     onTap: onDelete,
-                    child: SvgPicture.asset("assets/Icons/poubelle.svg"),
+                    child: SvgPicture.asset("assets/Icons/poubelle.svg",height:14 ,width: 12.92,),
                   ),
                   if (!isDetails) ...[
                     const SizedBox(width: 21),
                     InkWell(
-                        onTap: onViewDetails,
-                        child: SvgPicture.asset("assets/Icons/arrow_next.svg")),
+                      onTap: onViewDetails,
+                      child: SvgPicture.asset("assets/Icons/arrow_next.svg",width: 7.03,height: 14.51,),
+                    ),
                     const SizedBox(width: 18),
-                  ]
+                  ],
                 ],
               ),
             ],
