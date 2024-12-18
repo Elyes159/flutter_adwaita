@@ -9,6 +9,8 @@ class PackOrMemberShipCard extends StatelessWidget {
   final VoidCallback? onViewDetails;
   final bool isDetails;
   final bool? isPack;
+  final int index; // Index de l'élément
+  final bool isLast;
 
   const PackOrMemberShipCard({
     Key? key,
@@ -19,6 +21,8 @@ class PackOrMemberShipCard extends StatelessWidget {
     this.onViewDetails,
     required this.isDetails,
     this.isPack,
+    required this.index,
+    required this.isLast,
   }) : super(key: key);
 
   @override
@@ -32,7 +36,12 @@ class PackOrMemberShipCard extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: const Color(0xFF313244),
-            borderRadius: BorderRadius.circular(8),
+             borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(index == 0 ? 8 : 0), // Arrondi haut gauche
+              topRight: Radius.circular(index == 0 ? 8 : 0), // Arrondi haut droit
+              bottomLeft: Radius.circular(isLast ? 8 : 0), // Arrondi bas gauche
+              bottomRight: Radius.circular(isLast ? 8 : 0), // Arrondi bas droit
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
